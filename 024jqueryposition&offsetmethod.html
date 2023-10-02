@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 5px;
+            border: 2px solid black;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery position and offset method</h1>
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugit perspiciatis, omnis eius pariatur ratione maiores commodi sed, nemo repellendus temporibus, nostrum vero dolores corrupti repellat quibusdam tenetur error? Ea?</p>
+    </div>
+    <br>
+    <button id="positionbtn">position</button>
+    <button id="offsetbtn">offset</button>
+
+    <script>
+// 1. position() method:-
+// The position() method returns the position (relative to its parent element) of the first matched element.
+// This method returns an object with 2 properties; the top and left positions in pixels.
+// The position of parent element should be relative
+
+// Syntax
+// $(selector).position()
+
+
+// 2. offset() method:-
+// The offset() method set or returns the offset coordinates for the selected elements, relative to the document.
+
+// When used to return the offset:
+// This method returns the offset coordinates of the FIRST matched element. It returns an object with 2 properties; the top and left positions in pixels.
+
+// When used to set the offset:
+// This method sets the offset coordinates of ALL matched elements.
+
+// Syntax
+// Return the offset coordinates:
+
+// $(selector).offset()
+// Set the offset coordinates:
+
+// $(selector).offset({top:value,left:value})
+// Set offset coordinates using a function:
+
+// $(selector).offset(function(index,currentoffset))
+
+// Parameter	Description
+// {top:value,left:value}	Required when setting the offset. Specifies the top and left coordinates in pixels.
+
+// Possible values:
+// Name/Value pairs, like {top:100,left:100}
+// An object with top and left properties (example)
+// function(index,currentoffset)	Optional. Specifies a function that returns an object containing the top and left coordinates
+// index - Returns the index position of the element in the set
+// currentoffset - Returns the current coordinates of the selected element
+
+
+$(document).ready(function(){
+
+    // getting values 
+    // $("#positionbtn").click(function(){
+    //     console.log($("#box h2").position())
+    // })
+    // $("#offsetbtn").click(function(){
+    //     console.log($("#box h2").offset())
+    // })
+
+    // setting values
+    $("#positionbtn").click(function(){
+        var x=$("#box h2").position();
+        alert("Top position: " + x.top + " Left position: " + x.left)
+        // console.log($("#box h2").position().left(100))
+    })
+    $("#offsetbtn").click(function(){
+        console.log($("#box h2").offset({top:100,left:100}))
+    })
+})
+
+    </script>
+</body>
+</html>

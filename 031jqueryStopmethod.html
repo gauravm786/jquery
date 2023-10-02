@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #box{
+            height: 100px;
+            width: 100px;
+            background-color: lightgreen;
+            border: 2px solid black;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery stop() method</h1>
+    <div id="box">Gaurav Mishra</div>
+    <br>
+    <button id="animatebtn">Animate</button>
+    <button id="stopbtn">Stop</button>
+    <script>
+
+// 1. stop method():-
+// The jQuery stop() method is used to stop an animation or effect before it is finished.
+// The stop() method works for all jQuery effect functions, including sliding, fading and custom animations.
+
+// Syntax:
+// $(selector).stop(stopAll,goToEnd);
+
+// The optional stopAll parameter specifies whether also the animation queue should be cleared or not. Default is false, which means that only the active animation will be stopped, allowing any queued animations to be performed afterwards.
+// The optional goToEnd parameter specifies whether or not to complete the current animation immediately. Default is false.
+// So, by default, the stop() method kills the current animation being performed on the selected element.        
+
+
+        $(document).ready(function(){
+
+            $("#animatebtn").click(function(){
+                $("#box").animate({
+                    left:'300px'
+                },3000)
+                $("#box").animate({
+                    fontSize:'20px'
+                },3000)
+            })
+
+            $("#stopbtn").click(function(){
+
+                // only stop animation for first animation
+                // $("#box").stop()
+
+                // to stop all animation pass true value in a parameter
+                // $("#box").stop(true)
+
+                // if we will pass value of second parameter as true then animation will directly end.
+                $("#box").stop(false,true)
+
+                // we can use stop for other methods also like fadeIn,fadeOut,etc
+            })
+        })
+    </script>
+</body>
+</html>

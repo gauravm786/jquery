@@ -1,0 +1,110 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        #box{
+            background-color: pink;
+            border: 1px solid black;
+            color: black;
+            padding: 10px;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>jquery Get methods</h1>
+    <div id="box" class="test abc">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum <span>dolor sit amet consectetur adipisicing elit.</span>  Consequatur nihil facere quaerat nam iste odit laboriosam, debitis corporis nobis veniam est, non qui voluptates. Explicabo itaque fugiat blanditiis ipsum voluptatem!</p>
+    </div>
+    <br>
+    <button id="clickbutton">Set Value</button>
+    
+    <script>
+        // text() method only sets or retutrn text and if tag is used inside it then it will return tag name. 
+        // If we use html() method and use tag in it then that tag is applied on the content instead of returning tag name.
+
+        $(document).ready(function(){
+
+            // using text() method
+            // $("#clickbutton").click(function(){
+            //     $("#box h2").text("Hello Yahoo Baba")
+            //     $("#box p").text("This is new text")
+            // })
+
+            // using html() method
+            $("#clickbutton").click(function(){
+                $("#box h2").text("Hello <b> Yahoo </b> baba.")
+                $("#box p").html("This <b> is new </b> text.")
+            })
+
+            // using attr() method
+            $("#clickbutton").click(function(){
+                $("#box h2").attr("class","red")  
+            })
+        })
+    </script>
+</body>
+</html>  
+-->
+
+<!-- using val method  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        #box{
+            background-color: pink;
+            border: 1px solid black;
+            color: black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jquery Get methods</h1>
+    <form action="" id="sform">
+        <label for="sname">Name</label>
+        <input type="text" id="sname">
+        <br> <br>
+        <label for="sname">Class</label>
+        <input type="text" id="sclass">
+        <br> <br>
+        <label for="scountry">Country</label>
+            <select id="scountry">
+                <option value="india">India</option>
+                <option value="pak">Pakistan</option>
+                <option value="bang">Bangladesh</option>
+                <option value="sri">Srilanka</option>
+            </select>
+        <br> <br>    
+        <input type="submit" value="Submit">
+
+    </form>
+    <script>
+        // val() method helps us to set default value in html form.  
+
+
+        $(document).ready(function(){
+                var name=$("#sname").val("Gaurav Mishra")
+                var std=$("#sclass").val("TYCS")
+
+    
+        
+        })
+    </script>
+</body>
+</html> 

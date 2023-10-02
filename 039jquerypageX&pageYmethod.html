@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #result{
+            background-color: blue;
+            width: 100%;
+            height: 300px;
+            color: black;
+            font-size: 25px;
+        }
+        #box{
+            background: orange;
+            height: 40px;
+            width: 40px;
+            border-radius: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery event pageX & pageY Property</h1>
+    <div id="result"></div>
+    <div id="box"></div>
+
+    <script>
+// 1. pageX:-
+// The pageX property returns the document relative X coordinate of the mouse pointer when a mouse event occurs.
+// The pageX property is read-only.
+// The document is the web page.
+
+// Syntax
+// event.pageX
+
+// Technical Details
+// Return Value:	A Number.
+// The X coordinate of the mouse pointer, in pixels.
+
+
+// 2. pageY:-
+// The pageY property returns the document relative coordinate the mouse pointer when a mouse event occurs.
+// The pageY property is read-only.
+// The document is the web page.
+
+// Syntax
+// event.pageY
+
+// Technical Details
+// Return Value:	A Number.
+// The Y (vertical) pixel coordinate of the mouse pointer.
+
+
+
+        $(document).ready(function(){
+            $(document).mousemove(function(event){
+                $("#result").text(`X : ${event.pageX}  Y : ${event.pageY}`)
+                var X=event.pageX
+                var Y=event.pageY
+                $("#box").offset({top:Y,left:X})
+            })
+        })
+    </script>
+</body>
+</html>

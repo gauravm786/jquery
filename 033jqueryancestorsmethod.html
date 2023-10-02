@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #main-outer{
+            background-color: lightskyblue;
+            padding: 10px;
+            border: 2px solid black;
+        }
+        #outer{
+            background-color: lightsalmon;
+            padding: 10px;
+            border: 2px solid black;
+        }
+        #inner{
+            background-color: lightpink;
+            padding: 10px;
+            border: 2px solid black;
+        }
+        .child-flex{
+            display: flex;
+            justify-content: space-between;
+        }
+        .child-flex>div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: cyan;
+            height: 150px;
+            width: 100px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Ancestor Methods</h1>
+    <div id="main-outer">
+        <h2>Main Outer</h2>
+        <ul id="outer" style="position: relative;">
+            <h2>outer</h2>
+            <div id="inner">
+                <h2 id="child-head">Inner</h2>
+                <div class="child-flex">
+                    <div>A</div>
+                    <div>B</div>
+                    <div id="child-C">C</div>
+                    <div>D</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+// 1. parent() method:-
+// The parent() method returns the direct parent element of the selected element.
+// The DOM tree: This method only traverse a single level up the DOM tree. To traverse all the way up to the document's root element (to return grandparents or other ancestors), use the parents() or the parentsUntil() method.   
+
+// Syntax
+// $(selector).parent(filter)
+
+// Parameter	Description
+// filter	Optional. Specifies a selector expression to narrow down the parent search
+
+
+// 2. parents() method:-
+// The parents() method returns all ancestor elements of the selected element.
+
+// An ancestor is a parent, grandparent, great-grandparent, and so on.
+
+// The DOM tree: This method traverse upwards from the parent element along ancestors of DOM elements, all the way up to the document's root element (<html>).
+
+// Note: If the filter parameter is empty, this function will select all ancestors of a set of elements, from the direct parent and all the way up to <body> and <html>. It is therefore often useful to pass a selector expression to narrow down the search result.
+
+// This method is similar to closest(), in that they both traverse up the DOM tree. The differences are as follows:
+
+// parents()
+
+// Begins with the parent element
+// Travels up the DOM tree and returns all ancestors that matches the passed expression
+// The returned jQuery object contains zero or more than one element
+// closest()
+
+// Begins with the current element
+// Travels up the DOM tree and returns the first ancestor that matches the passed expression
+// The returned jQuery object contains zero or one element
+// Other related methods:
+
+// parent() - returns the direct parent element of the selected element
+// parentsUntil() - returns all ancestor elements between two given arguments
+
+// Syntax
+// $(selector).parents(filter)
+
+// Parameter	Description
+// filter	Optional. Specifies a selector expression to narrow down the search for ancestors
+
+// Note: To return multiple ancestors, separate each expression with a comma.
+
+
+// 3. parentsUntil() method:-
+// The parentsUntil() method returns all ancestor elements between the selector and stop.
+// An ancestor is a parent, grandparent, great-grandparent, and so on.
+// The DOM tree: This method traverse upwards from the parent element along ancestors of DOM elements, all the way up to the document's root element, until it reaches a specific element.
+// Note: If both parameters are empty, this method will return all ancestor elements (same as the parents() method).
+
+// Syntax
+// $(selector).parentsUntil(stop,filter)
+
+// Parameter	Description
+// stop	Optional. A selector expression, element or jQuery object indicating where to stop the search for matching ancestor elements
+// filter	Optional. Specifies a selector expression to narrow down the search for ancestors between selector and stop
+
+// Note: To return multiple ancestors, separate each expression with a comma.
+
+
+// 4. offsetParent() method
+// The offsetParent() method returns the first positioned parent element.
+// Tip: An element can be positioned with jQuery, or with the CSS position property (relative, absolute, or fixed).
+
+// Syntax
+// $(selector).offsetParent()
+
+
+// 5. closest() method:-
+// The closest() method returns the first ancestor of the selected element.
+// An ancestor is a parent, grandparent, great-grandparent, and so on.
+// The DOM tree: This method traverse upwards from the current element, all the way up to the document's root element (<html>), to find the first ancestor of DOM elements.
+
+// This method is similar to parents(), in that they both traverse up the DOM tree. The differences are as follows:
+// closest()
+// Begins with the current element
+// Travels up the DOM tree and returns the first (single) ancestor that matches the passed expression
+// The returned jQuery object contains zero or one element
+// parents()
+
+// Begins with the parent element
+// Travels up the DOM tree and returns all ancestors that matches the passed expression
+// The returned jQuery object contains zero or more than one element
+// Other related methods:
+
+// parent() - returns the direct parent element of the selected element
+// parentsUntil() - returns all ancestor elements between two given arguments
+
+$(document).ready(function(){
+    // 1. using parent() method:-
+    // $("#child-C").parent().css("background","red")
+    // $("#inner").parent().css("background","red")
+    
+    // 2. using parents() method:-
+    // $("#child-C").parents().css("background","red")
+    // $("#inner").parents().css("background","red")
+    
+    // 3. using parentsUntil() method:-
+    // $("#child-C").parentsUntil("#main-outer").css("background","red")
+    // $("#child-C").parentsUntil("body").css("background","red")
+    
+    // 4. using parentsUntil() method:-
+    // $("#child-C").offsetParent().css("background","red")
+
+    // 5. closest() method:-
+    // $("#child-C").closest('div').css("background","red")
+    $("#child-C").closest('ul').css("background","red")
+
+})
+
+    </script>
+</body>
+</html>

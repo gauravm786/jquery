@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #box{
+            background: lightgreen;
+            padding: 10px;
+            height: 100px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery event.preventDefault() method</h1>
+    <div id="box">
+        <a href="https://www.google.com/" id="result">Google</a>
+        <br>
+        <br>
+        <a href="https://www.w3schools.com/">w3schools</a>
+    </div>
+    <br>
+    <h2></h2>
+
+    <script>
+// 1. event.preventDefault() method:-
+// The event.preventDefault() method stops the default action of an element from happening.
+
+// For example:
+// Prevent a submit button from submitting a form
+// Prevent a link from following the URL
+// Tip: Use the event.isDefaultPrevented() method to check whether the preventDefault() method was called for the event.
+
+// Syntax
+// event.preventDefault()
+
+// Parameter	Description
+// event	Required. The event parameter comes from the event binding function
+
+
+// 2. event.isDefaultPrevented() method:-
+// The event.isDefaultPrevented() method checks whether the preventDefault() method was called for the event.
+
+// Syntax
+// event.isDefaultPrevented()
+
+// Parameter	Description
+// event	Required. The event parameter comes from the event binding function
+
+$(document).ready(function(){
+    $("#result").click(function(event){
+        event.preventDefault()
+
+        var a=event.isDefaultPrevented()
+        $("h2").html(a)
+    })
+})
+
+    </script>
+</body>
+</html>

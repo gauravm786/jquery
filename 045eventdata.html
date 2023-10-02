@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jquery event.data</h1>
+    <div id="box">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quod, illum nulla nemo eaque pariatur natus tempore officia facilis veniam totam molestias? Adipisci, eligendi quasi molestias libero sequi ea! Ipsa.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quod, illum nulla nemo eaque pariatur natus tempore officia facilis veniam totam molestias? Adipisci, eligendi quasi molestias libero sequi ea! Ipsa.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quod, illum nulla nemo eaque pariatur natus tempore officia facilis veniam totam molestias? Adipisci, eligendi quasi molestias libero sequi ea! Ipsa.</p>
+    </div>
+    <script>
+// 1.  event.data property:-
+// The event.data property contains the optional data passed to an event method when the current executing handler is bound.
+
+// Syntax
+// event.data
+
+// Parameter	Description
+// event	Required. The event parameter comes from the event binding function
+
+
+// 2. index() method:-
+// The index() method returns the index position of specified elements relative to other specified elements.
+// The elements can be specified by jQuery selectors, or a DOM element.
+// Note: If the element is not found, index() will return -1.
+
+// Syntax
+// $(selector).index(element)
+
+// Parameter	Description
+// element	Optional. Specifies the element to get the index position of. Can be a DOM element or a jQuery selector
+
+$(document).ready(function(){
+
+    // here i holds the index value of p tag.
+    $("p").each(function(i){ 
+
+        // xy is a variable which stores value of i
+        $(this).on("click",{xy:i},function(event){
+            // alert(event.data.xy)
+            // alert("The "+ $(this).index()+1 +"." + "paragraph has data: " + event.data.xy)
+            alert("The " + $(this).index() + ". paragraph has data: " + event.data.xy);
+        })
+    })
+})
+
+    </script>
+</body>
+</html>

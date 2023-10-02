@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<style>
+#box{
+    border: 2px solid black;
+    padding: 5px;
+    background: lightgreen;
+}
+#test{
+    border: 2px solid black;
+    padding: 5px;
+    background: pink;
+}
+</style>
+
+<body>
+    <h1>jQuery wrap() and unwrap() Method</h1>
+    
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae a corporis unde alias laborum sed animi. Dolore ex, accusantium at eos fugit rem perferendis deleniti ea laborum, tempore minus obcaecati.</p>
+    </div>
+    <br>
+    <button id="wrapbtn">Wrap</button>
+    <button id="unwrapbtn">Unwrap</button>
+
+<script>
+
+// 1. wrap() method:-
+// The wrap() method wraps specified HTML element(s) around each selected element.
+
+// Syntax
+// $(selector).wrap(wrappingElement,function(index))
+
+// Parameter	Description
+// wrappingElement	Required. Specifies what HTML element(s) to wrap around each selected element
+// Possible values:
+
+// HTML elements
+// jQuery objects
+// DOM elements
+// function(index)	Optional. Specifies a function that returns the wrapping element
+// index - Returns the index position of the element in the set
+
+
+// 2. unwrap() method:-
+// The unwrap() method removes the parent element of the selected elements.
+
+// Syntax
+// $(selector).unwrap()
+
+
+
+$(document).ready(function(){
+$("#wrapbtn").click(function(){
+    $("#box p").wrap('<h2 id="test"></h2>')
+})
+
+$("#unwrapbtn").click(function(){
+    $("#box p").unwrap()
+})
+
+})
+
+
+    </script>
+</body>
+
+</html>

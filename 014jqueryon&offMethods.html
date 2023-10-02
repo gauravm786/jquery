@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        #box{
+            border: 2px solid black;
+            padding: 10px;
+        }
+        .boxbg{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery on() Methods</h1>
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum inventore assumenda quibusdam placeat optio ipsa molestiae dicta numquam quis rem facilis illo, iste at praesentium tenetur sed doloribus officiis vero?</p>
+    </div>
+    <br>
+    <button id="removebutton">Remove Button</button>
+
+    <script>
+        // 1. on() method:- 
+        // The on() method attaches one or more event handlers for the selected elements and child elements.
+        // Note: Event handlers attached using the on() method will work for both current and FUTURE elements (like a new element created by a script).
+        // Tip: To remove event handlers, use the off() method.
+        // Tip: To attach an event that only runs once and then removes itself, use the one() method.
+
+// $(selector).on(event,childSelector,data,function,map)
+// Parameter	Description
+// event	Required. Specifies one or more event(s) or namespaces to attach to the selected elements.
+// Multiple event values are separated by space. Must be a valid event
+// childSelector	Optional. Specifies that the event handler should only be attached to the specified child elements (and not the selector itself, like the deprecated delegate() method).
+// data	Optional. Specifies additional data to pass along to the function
+// function	Required. Specifies the function to run when the event occurs
+// map	Specifies an event map ({event:function, event:function, ...}) containing one or more event to attach to the selected elements, and functions to run when the events occur
+
+// 2. off() method:-
+// The off() method is most often used to remove event handlers attached with the on() method.
+// Note: To remove specific event handlers, the selector string must match the one passed to the on() method, when the event handler was attached. 
+
+$(document).ready(function(){
+    // using two events on one method 
+    // $("#box").on("mouseover mouseout",function(){
+    //     $("#box").toggleClass("boxbg")
+    // })
+
+    // using multiple events on one method
+    $("#box").on({
+        click:function(){
+            $("#box").css({"background":"blue","color":"black"})
+        },
+        mouseover:function(){
+            $(this).css({"background":"black","color":"white"})
+        },
+        mouseout:function(){
+            $(this).css({"background":"white","color":"black"})
+        }
+    })
+
+    // off method()
+    $("#removebutton").click(function(){
+        $("#box").off("mouseover mouseout")
+    })
+
+})
+
+
+    </script>
+</body>
+</html>

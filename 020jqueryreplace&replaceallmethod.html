@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<style>
+#box{
+    border: 2px solid black;
+    padding: 5px;
+    background: lightgreen;
+}
+#box2{
+    border: 2px solid black;
+    padding: 5px;
+    background: pink;
+}
+</style>
+
+<body>
+    <h1>jQuery replace() and replaceAll() Method</h1>
+    
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae a corporis unde alias laborum sed animi. Dolore ex, accusantium at eos fugit rem perferendis deleniti ea laborum, tempore minus obcaecati.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae a corporis unde alias laborum sed animi. Dolore ex, accusantium at eos fugit rem perferendis deleniti ea laborum, tempore minus obcaecati.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae a corporis unde alias laborum sed animi. Dolore ex, accusantium at eos fugit rem perferendis deleniti ea laborum, tempore minus obcaecati.</p>
+    </div>
+    <br>
+    <button id="replacebtn">Replace</button>
+
+<script>
+// 1. replaceWith() method:-
+// The replaceWith() method replaces selected elements with new content.
+
+// Syntax
+// $(selector).replaceWith(content,function(index))
+
+// Parameter	Description
+// content	Required. Specifies the content to insert (can contain HTML tags)
+// Possible values:
+
+// HTML elements
+// jQuery objects
+// DOM elements
+// function(index)	Optional. Specifies a function that returns the content to replace
+// index - Returns the index position of the element in the set
+
+
+// 2. replaceAll() method
+// The replaceAll() method replaces selected elements with new HTML elements.
+
+// Syntax
+// $(content).replaceAll(selector)
+
+// Parameter	Description
+// content	Required. Specifies the content to insert (must contain HTML tags)
+// selector	Required. Specifies which elements to be replaced
+
+$(document).ready(function(){
+
+// 1. replace method:-
+// $("#replacebtn").click(function(){
+    // $("#box p:first").replaceWith("<h3>Gaurav Mishra</h3>")
+    // $("#box p:eq(1)").replaceWith("<h3>Gaurav Mishra</h3>")
+
+    // we can use replacewith method without tag and it will return text content
+    // $("#box p:eq(1)").replaceWith("Gaurav Mishra")
+// })
+
+// 2. replaceAll method:-
+$("#replacebtn").click(function(){
+    // $("<h3>Gaurav Mishra</h3>").replaceAll("#box p")
+    // $("<h3>Gaurav Mishra</h3>").replaceAll("#box p:first")
+
+    // we cannot use replaceAll method without tag because it will not return text content
+    // $("Gaurav Mishra").replaceAll("#box p:first")
+})
+
+})
+
+
+    </script>
+</body>
+
+</html>

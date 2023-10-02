@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #first{
+            background: olive;
+            padding: 10px;
+        }
+        #second{
+            background: lightseagreen;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery has() & is() Method</h1>
+
+    <ul>
+        <li>Orange</li>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Grapes</li>
+    </ul>
+   
+
+    <script>
+
+// 1. each() method
+// The each() method specifies a function to run for each matched element.
+// Tip: return false can be used to stop the loop early.
+
+// Syntax
+// $(selector).each(function(index,element))
+
+// Parameter	Description
+// function(index,element)	Required. A function to run for each matched element.
+// index - The index position of the selector
+// element - The current element (the "this" selector can also be used)
+
+
+$(document).ready(function(){
+
+$("li").each(function(){
+    // console.log($("li").text()) //returns items in one line
+    // console.log($(this).text()) //returns items on new line
+
+    $(this).text("Hello") 
+})    
+
+})
+
+    </script>
+</body>
+</html>

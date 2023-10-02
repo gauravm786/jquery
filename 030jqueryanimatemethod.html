@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #box{
+            height: 100px;
+            width: 100px;
+            background-color: lightgreen;
+            border: 2px solid black;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery animate() method</h1>
+    <div id="box">Gaurav Mishra</div>
+    <br>
+    <button id="animatebtn">Animate</button>
+    <script>
+// Note:-position property should be applied on the element on which we want to use animate method.
+
+// 1. animate() method:-
+// The animate() method performs a custom animation of a set of CSS properties.
+// This method changes an element from one state to another with CSS styles. The CSS property value is changed gradually, to create an animated effect.
+// Only numeric values can be animated (like "margin:30px"). String values cannot be animated (like "background-color:red"), except for the strings "show", "hide" and "toggle". These values allow hiding and showing the animated element.
+// Tip: Use "+=" or "-=" for relative animations.
+
+// Syntax
+// (selector).animate({styles},speed,easing,callback)
+
+// Parameter	Description
+// styles	Required. Specifies one or more CSS properties/values to animate.
+// Note: The property names must be camel-cased when used with the animate() method: You will need to write paddingLeft instead of padding-left, marginRight instead of margin-right, and so on.
+
+// Properties that can be animated:
+// backgroundPositionX
+// backgroundPositionY
+// borderWidth
+// borderBottomWidth
+// borderLeftWidth
+// borderRightWidth
+// borderTopWidth
+// borderSpacing
+// margin
+// marginBottom
+// marginLeft
+// marginRight
+// marginTop
+// opacity
+// outlineWidth
+// padding
+// paddingBottom
+// paddingLeft
+// paddingRight
+// paddingTop
+// height
+// width
+// maxHeight
+// maxWidth
+// minHeight
+// minWidth
+// fontSize
+// bottom
+// left
+// right
+// top
+// letterSpacing
+// wordSpacing
+// lineHeight
+// textIndent
+
+// Only numeric values can be animated (like "margin:30px"). String values cannot be animated (like "background-color:red"), except for the strings "show", "hide" and "toggle". These values allow hiding and showing the animated element.
+// speed	Optional. Specifies the speed of the animation. Default value is 400 milliseconds
+// Possible values:
+
+// milliseconds (like 100, 1000, 5000, etc)
+// "slow"
+// "fast"
+// easing	Optional. Specifies the speed of the element in different points of the animation. Default value is "swing". Possible values:
+// "swing" - moves slower at the beginning/end, but faster in the middle
+// "linear" - moves in a constant speed
+// Tip: More easing functions are available in external plugins.
+// callback	Optional. A function to be executed after the animation completes. To learn more about callback, please read our jQuery Callback chapter
+// ADVERTISEMENT
+// Alternate Syntax
+// (selector).animate({styles},{options})
+
+// Parameter	Description
+// styles	Required. Specifies one or more CSS properties/values to animate (See possible values above)
+// options	Optional. Specifies additional options for the animation. Possible values:
+// duration - sets the speed of the animation
+// easing - specifies the easing function to use
+// complete - specifies a function to be executed after the animation completes
+// step - specifies a function to be executed for each step in the animation
+// progress - specifies a function to be executed after each step in the animation
+// queue - a Boolean value specifying whether or not to place the animation in the effects queue
+// specialEasing - a map of one or more CSS properties from the styles parameter, and their corresponding easing functions
+// start - specifies a function to be executed when the animation begins
+// done - specifies a function to be executed when the animation ends
+// fail - specifies a function to be executed if the animation fails to complete
+// always - specifies a function to be executed if the animation stops without completing
+
+$(document).ready(function(){
+    $("#animatebtn").click(function(){
+        // $("#box").animate({
+        //     left:"150px",
+        //     // width:"200px",
+        //     // width:"+=200px",
+        //     // width:"slow",
+        //     // width:"fast",
+        //     // width:"hide",
+        //     width:"toggle",
+        //     border:"5px solid black",
+        //     fontSize:"25px",
+        //     padding:"10px"
+        // })
+
+        $("#box").animate({left:"150px",fontSize:"25px"},"slow",function(){alert("first animation completed")})
+        $("#box").animate({top:"150px",border:"10px solid black"},5000,function(){alert("second animation completed")})
+        $("#box").animate({width:"150px",padding:"10px"},5000,function(){alert("third animation completed")})
+})
+        })
+    </script>
+</body>
+</html>

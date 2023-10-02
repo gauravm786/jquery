@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #first{
+            background: olive;
+            padding: 10px;
+        }
+        #second{
+            background: lightseagreen;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery has() & is() Method</h1>
+
+    <div id="first">
+        <p>Lorem ipsum, <b>dolor sit amet consectetur adipisicing elit</b>.Enim cum error suscipit facere? Officia labore, quibusdam molestias pariatur et ullam at illum laboriosam nobis unde porro consequuntur error minus atque.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim cum error suscipit facere? Officia labore, quibusdam molestias pariatur et ullam at illum laboriosam nobis unde porro consequuntur error minus atque.</p>
+    </div>
+    <ul>
+        <li>Orange</li>
+        <li><span>Apple</span></li>
+        <li>Banana</li>
+        <li>Grapes</li>
+    </ul>
+    <!-- <div id="second"> -->
+        <p class="test">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim cum error suscipit facere? Officia labore, quibusdam molestias pariatur et ullam at illum laboriosam nobis unde porro consequuntur error minus atque.</p>
+        <p>Lorem ipsum, <span class="test">dolor sit amet consectetur adipisicing elit.</span>  Enim cum error suscipit facere? Officia labore, quibusdam molestias pariatur et ullam at illum laboriosam nobis unde porro consequuntur error minus atque.</p>
+    <!-- </div> -->
+
+    <script>
+// 1. has() method:-
+// The has() method returns all elements that have one or more elements inside of them, that matches the specified selector.
+// Tip: To select elements that have multiple elements inside of them, use comma (see example below).
+
+// Syntax
+// $(selector).has(element)
+
+// Parameter	Description
+// element	Required. Specifies a selector expression or an element to match elements against
+
+
+// 2. is() method:-
+// The is() method checks if one of the selected elements matches the selectorElement.
+
+// Syntax
+// $(selector).is(selectorElement,function(index,element))
+
+// Parameter	Description
+// selectorElement	Required. Specifies a selector expression, element or a jQuery object to match the current set of elements against. Returns true if there is at least one match from the given argument, and false if not.
+// function(index,element)	
+// Optional. Specifies a function to run for the group of selected elements.
+
+// index - the index position of the element
+// element - the current element (the "this" selector can also be used)
+
+
+
+$(document).ready(function(){
+
+// 1. has() method:-    
+// has() method target those element whose child child element has particular class instead of targeting parent class who has particular class.
+
+// $("p").has("b").css("background","gold")
+// $("p").has("span").css("background","gold")
+// $("p").has("b,span").css("background","gold")
+// $("li").has("span").css("background","gold")
+// $("p").has(".test").css("background","gold")
+
+// 2. is() method:-   
+if($("p").parent().is('div')){
+console.log($("p").parent().is('div')) //true
+
+$("p").click(function(){
+    if($(this).parent().is('div')){
+        $(this).css("background","gold")
+    }
+})
+}
+
+})
+
+    </script>
+</body>
+</html>

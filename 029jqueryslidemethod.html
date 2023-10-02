@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 5px;
+            border: 2px solid black;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery slideDown,slideUp,slideToggle method</h1>
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugit perspiciatis, omnis eius pariatur ratione maiores commodi sed, nemo repellendus temporibus, nostrum vero dolores corrupti repellat quibusdam tenetur error? Ea?</p>
+    </div>
+    <br>
+    <button id="slidedownbtn">Slide Down</button>
+    <button id="slideupbtn">Slide Up</button>
+    <button id="slidetogglebtn">Slide Toggle</button>
+    
+    <script> 
+
+// 1. slideUp() method:-
+// The slideUp() method slides-up (hides) the selected elements.
+// Note: Hidden elements will not be displayed at all (no longer affects the layout of the page).
+// Tip: To slide-down (show) elements, look at the slideDown() method.
+
+// Syntax
+// $(selector).slideUp(speed,easing,callback)
+
+// Parameter	Description
+// speed	Optional. Specifies the speed of the slide effect. Default value is 400 milliseconds
+// Possible values:
+// milliseconds
+// "slow"
+// "fast"
+
+// easing	Optional. Specifies the speed of the element in different points of the animation. Default value is "swing"
+// Possible values:
+// "swing" - moves slower at the beginning/end, but faster in the middle
+// "linear" - moves in a constant speed
+// Tip: More easing functions are available in external plugins
+
+// callback	Optional. A function to be executed after the slideUp() method is completed
+
+
+// 2. slideDown() method:-
+// The slideDown() method slides-down (shows) the selected elements.
+// Note: slideDown() works on elements hidden with jQuery methods and display:none in CSS (but not visibility:hidden).
+// Tip: To slide-up (hide) elements, look at the slideUp() method.
+
+// Syntax
+// $(selector).slideDown(speed,easing,callback)
+
+// Parameter	Description
+// speed	Optional. Specifies the speed of the slide effect. Default value is 400 milliseconds
+// Possible values:
+// milliseconds
+// "slow"
+// "fast"
+
+// easing	Optional. Specifies the speed of the element in different points of the animation. Default value is "swing"
+// Possible values:
+// "swing" - moves slower at the beginning/end, but faster in the middle
+// "linear" - moves in a constant speed
+// Tip: More easing functions are available in external plugins.
+
+// callback	Optional. A function to be executed after the slideDown() method is completed
+
+
+//3. slideToggle() method
+// The slideToggle() method toggles between slideUp() and slideDown() for the selected elements.
+// This method checks the selected elements for visibility. slideDown() is run if an element is hidden. slideUp() is run if an element is visible - This creates a toggle effect.
+
+// Syntax
+// $(selector).slideToggle(speed,easing,callback)
+
+// Parameter	Description
+// speed	Optional. Specifies the speed of the slide effect. Default value is 400 milliseconds
+// Possible values:
+// milliseconds
+// "slow"
+// "fast"
+
+// easing	Optional. Specifies the speed of the element in different points of the animation. Default value is "swing"
+// Possible values:
+// "swing" - moves slower at the beginning/end, but faster in the middle
+// "linear" - moves in a constant speed
+// Tip: More easing functions are available in external plugins
+
+// callback	Optional. A function to be executed after the slideToggle() method is completed
+
+
+$(document).ready(function(){
+    
+    // 1. slideDown method():-   
+  $("#slidedownbtn").click(function(){
+    // $("#box").slideDown()
+    // $("#box").slideDown("slow")
+    // $("#box").slideDown("fast")
+    // $("#box").slideDown(4000)
+    // $("#box").slideDown("swing")
+    // $("#box").slideDown(linear,function(){
+    //     alert("hide button clicked")
+    // })
+    $("#box").slideDown("swing",function(){
+        alert("slideDown button clicked")
+    })
+
+  })  
+  
+// 2. slideUp method():-   
+  $("#slideupbtn").click(function(){
+    // $("#box").slideUp()
+    // $("#box").slideUp("slow")
+    // $("#box").slideUp("fast")
+    // $("#box").slideUp(4000)
+    $("#box").slideUp(4000,function(){
+        alert("slideUp button clicked")
+    })
+   })  
+    
+// 3. slideToggle method():-   
+    $("#slidetogglebtn").click(function(){
+    // $("#box").slideToggle()
+    // $("#box").slideToggle("slow")
+    // $("#box").slideToggle("fast")
+    // $("#box").slideToggle(4000)
+    $("#box").slideToggle(4000,function(){
+        alert("slideToggle button clicked")
+    })
+    })     
+    
+})
+    </script>
+</body>
+</html>

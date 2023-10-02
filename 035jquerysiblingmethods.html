@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #main-outer{
+            background-color: lightskyblue;
+            padding: 10px;
+            border: 2px solid black;
+        }
+        #outer{
+            background-color: lightsalmon;
+            padding: 10px;
+            border: 2px solid black;
+        }
+        #inner{
+            background-color: lightpink;
+            padding: 10px;
+            border: 2px solid black;
+        }
+        .child-flex{
+            display: flex;
+            justify-content: space-between;
+        }
+        .child-flex>div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: cyan;
+            height: 150px;
+            width: 100px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery siblings Method</h1>
+    <div id="main-outer">
+        <h2>Main Outer</h2>
+        <div id="outer" style="position: relative;">
+            <h2 class="test">outer</h2>
+            <div id="inner">
+                <h2 id="child-head">Inner</h2>
+                <div class="child-flex">
+                    <div class="test">First</div>
+                    <div >A</div>
+                    <div>B</div>
+                    <div class="child-C">C</div>
+                    <div>D</div>
+                    <div>E</div>
+                    <div class="test">Last</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+// 1. siblings() method:-
+// The siblings() method returns all sibling elements of the selected element.
+// Sibling elements are elements that share the same parent.
+// The DOM tree: This method traverse forward and backwards along siblings of DOM elements.
+
+// Syntax
+// $(selector).siblings(filter)
+
+// Parameter	Description
+// filter	Optional. Specifies a selector expression to narrow down the search for sibling elements
+
+
+// 2. next() method:-
+// The next() method returns the next sibling element of the selected element.
+// Sibling elements are elements that share the same parent.
+// The DOM tree: This method traverse forward along the next sibling of DOM elements.
+
+// Syntax
+// $(selector).next(filter)
+
+// Parameter	Description
+// filter	Optional. Specifies a selector expression to narrow down the next sibling search
+
+
+// 3. prev() method:-
+// The prev() method returns the previous sibling element of the selected element.
+// Sibling elements are elements that share the same parent.
+// The DOM tree: This method traverse backwards along the previous sibling of DOM elements.
+
+// Syntax
+// $(selector).prev(filter)
+
+// Parameter	Description
+// filter	Optional. Specifies a selector expression to narrow down the previous sibling search
+
+
+// 4. nextAll() method:-
+// The nextAll() method returns all next sibling elements of the selected element.
+// Sibling elements are elements that share the same parent.
+// The DOM tree: This method traverse forward along siblings of DOM elements.
+
+// Syntax
+// $(selector).nextAll(filter)
+
+// Parameter	Description
+// filter	Optional. Specifies a selector expression to narrow down the search for next siblings
+
+
+// 5. prevAll() method:-
+// The prevAll() method returns all previous sibling elements of the selected element.
+// Sibling elements are elements that share the same parent.
+// The DOM tree: This method traverse backwards along siblings of DOM elements.
+
+// Syntax
+// $(selector).prevAll(filter)
+
+// Parameter	Description
+// filter	Optional. Specifies a selector expression to narrow down the search for previous siblings
+// Note: To return multiple siblings, separate each expression with a comma.
+
+
+// 6. prevUntil() method:-
+// The prevUntil() method returns all previous sibling elements between the selector and stop.
+// Sibling elements are elements that share the same parent.
+// The DOM tree: This method traverse backwards along siblings of DOM elements.
+// Note: If both parameters are empty, this method will return all previous sibling elements (same as the prevAll() method).
+
+// Syntax
+// $(selector).prevUntil(stop,filter)
+
+// Parameter	Description
+// stop	Optional. A selector expression, element or jQuery object indicating where to stop the search for previous matching siblings elements
+// filter	Optional. Specifies a selector expression to narrow down the search for sibling elements between the selector and stop
+// Note: To return multiple siblings, separate each expression with a comma.
+
+
+// 7. nextUntil() method:-
+// The nextUntil() method returns all next sibling elements between the selector and stop.
+// Sibling elements are elements that share the same parent.
+// The DOM tree: This method traverse forward along siblings of DOM elements.
+// Note: If both parameters are empty, this method will return all next sibling elements (same as the nextAll() method).
+
+// Syntax
+// $(selector).nextUntil(stop,filter)
+
+// Parameter	Description
+// stop	Optional. A selector expression, element or jQuery object indicating where to stop the search for next matching siblings elements
+// filter	Optional. Specifies a selector expression to narrow down the search for sibling elements between the selector and stop
+// Note: To return multiple siblings, separate each expression with a comma.
+
+$(document).ready(function(){
+
+// 1. siblings() method:-
+// $(".child-C").siblings().css("background","red")
+// $(".child-C").siblings(".test").css("background","red")
+
+// 2.next() method:-
+// $(".child-C").next().css("background","red")
+
+// 3.prev() method:-
+// $(".child-C").prev().css("background","red")
+
+// 4.nextAll() method:-
+// $(".child-C").nextAll().css("background","red")
+
+// directly target class test
+// $(".child-C").nextAll(".test").css("background","red")
+
+// 5.prevAll() method:-
+// $(".child-C").prevAll().css("background","red")
+
+// directly target class test
+// $(".child-C").prevAll(".test").css("background","red")
+
+// 6.nextUntil() method:-
+// $(".child-C").nextUntil(".test").css("background","red")
+
+// 7.prevUntil() method:-
+$(".child-C").prevUntil(".test").css("background","red")
+
+})
+
+</script>
+</body>
+</html>

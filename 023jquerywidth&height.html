@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <style>
+            #box{
+                background-color: lightgreen;
+                border: 10px solid black;
+                padding: 30px;
+                margin: 20px;
+            }
+        </style>
+</head>
+<body>
+    <h1>jQuery Width & Height Methods</h1>
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed rem doloremque maiores aut, hic aperiam ratione voluptates error sint at, nam, dolor dolore sunt odio fugiat assumenda! Natus, doloremque odit.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed rem doloremque maiores aut, hic aperiam ratione voluptates error sint at, nam, dolor dolore sunt odio fugiat assumenda! Natus, doloremque odit.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed rem doloremque maiores aut, hic aperiam ratione voluptates error sint at, nam, dolor dolore sunt odio fugiat assumenda! Natus, doloremque odit.
+            
+        </p>
+    </div>
+    <br>
+    <button id="widthbtn">width</button>
+    <button id="heightbtn">Height</button>
+
+    <script>
+
+// 1.width() method:-
+// The width() method sets or returns the width of the selected elements.
+// When this method is used to return width, it returns the width of the FIRST matched element.
+// When this method is used to set width, it sets the width of ALL matched elements.
+// this method does not include padding, border, or margin.
+
+// Syntax:-
+// Return the width:
+// $(selector).width()
+
+// Set the width:
+// $(selector).width(value)
+
+// Set the width using a function:
+// $(selector).width(function(index,currentwidth))
+
+// Parameter	Description
+// value	Required for setting width. Specifies the width in px, em, pt, etc. Default unit is px
+// function(index,currentwidth)	Optional. Specifies a function that returns the new width of selected elements
+// index - Returns the index position of the element in the set
+// currentwidth - Returns the current width of the selected element
+
+
+// 2. innerWidth() method:-
+// The innerWidth() method returns the inner width of the FIRST matched element.
+// this method includes padding, but not border and margin.
+
+// Syntax
+// $(selector).innerWidth()
+
+
+// 3. outerWidth()
+// The outerWidth() method returns the outer width of the FIRST matched element.
+// this method includes padding and border.
+// Tip: To include the margin, use outerHeight(true).
+
+// syntax 
+// $(selector).outerWidth(includeMargin)
+
+// Parameter	Description
+// includeMargin	Optional. A Boolean value specifying whether or not to include the margin
+// false - Default. Does not include the margin
+// true - Includes the margin
+
+
+// 4. height() method
+// The height() method sets or returns the height of the selected elements.
+// When this method is used to return height, it returns the height of the FIRST matched element.
+// When this method is used to set height, it sets the height of ALL matched elements.
+// this method does not include padding, border, or margin.
+
+// Syntax
+
+// Return the height:
+// $(selector).height()
+
+// Set the height:
+// $(selector).height(value)
+
+// Set the height using a function:
+// $(selector).height(function(index,currentheight))
+
+// Parameter	Description
+// value	Required for setting height. Specifies the height in px, em, pt, etc.
+// Default unit is px
+// function(index,currentheight)	Optional. Specifies a function that returns the new height of selected elements
+// index - Returns the index position of the element in the set
+// currentheight - Returns the current height of the selected element
+
+
+// 5. innerHeight() method:-
+// The innerHeight() method returns the inner height of the FIRST matched element.
+// this method includes padding, but not border and margin.
+
+// Syntax
+// $(selector).innerHeight()
+
+// 6. outerHeight() method:-
+// The outerHeight() method returns the outer height of the FIRST matched element.
+// this method includes padding and border.
+// Tip: To include the margin, use outerHeight(true).
+
+        // getting width of the element 
+        // $("#widthbtn").click(function(){
+        //     console.clear()
+        //     console.log(`width : ${$("#box").width()}`)
+        //     console.log(`innerWidth : ${$("#box").innerWidth()}`)
+        //     console.log(`outerWidth : ${$("#box").outerWidth()}`)
+        //     console.log(`outerWidth(true) : ${$("#box").outerWidth(true)}`)
+        // })
+
+        // getting height of the element
+        // $("#heightbtn").click(function(){
+        //     console.clear()
+        //     console.log(`height : ${$("#box").height()}`)
+        //     console.log(`innerHeight : ${$("#box").innerHeight()}`)
+        //     console.log(`outerHeight : ${$("#box").outerHeight()}`)
+        //     console.log(`outerHeight(true) : ${$("#box").outerHeight(true)}`)
+        // })
+
+        // setting height and width of the element 
+             $("#widthbtn").click(function(){
+                $("#box").width("400px")
+            })
+
+            $("#heightbtn").click(function(){
+                $("#box").height("400px")
+        })
+    </script>
+</body>
+</html>

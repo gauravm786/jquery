@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #box{
+            background: lightgreen;
+            padding: 10px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jquery event.stopPropagation() method</h1>
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum accusamus velit qui quo illo repellat iste quaerat tempora, dolore voluptatibus voluptatum eius doloremque similique architecto eveniet nobis. Ducimus, inventore excepturi!</p>
+        <button>Test Button</button>
+    </div>
+    <br>
+    <h3></h3>
+
+    <script>
+// 1. event.stopPropagation() method:-
+// The event.stopPropagation() method stops the bubbling of an event to parent elements, preventing any parent event handlers from being executed.
+// Tip: Use the event.isPropagationStopped() method to check whether this method was called for the event.
+
+// Syntax
+// event.stopPropagation()
+
+// Parameter	Description
+// event	Required. The event parameter comes from the event binding function
+
+// 2. event.isPropagationStopped() method:-
+// The event.isPropagationStopped() method checks whether event.stopPropagation() was called for the event.
+
+// This method returns true if event.stopPropagation() is called, and false if not.
+
+// Syntax
+// event.isPropagationStopped()
+
+// Parameter	Description
+// event	Required. The event parameter comes from the event binding function
+
+$(document).ready(function(){
+    $("div").click(function(){
+        alert("Div element is clicked")
+    })
+    $("h2").click(function(event){
+        event.stopPropagation()
+        alert("h2 element is clicked : " + event.isPropagationStopped()) //true
+    })
+    $("p").click(function(event){
+        alert("Div element is clicked : " +  event.isPropagationStopped()) //false 
+    })
+    $("button").click(function(event){
+        event.stopPropagation()
+        alert("button element is clicked : " + event.isPropagationStopped()) //true 
+    })
+})
+
+    </script>
+</body>
+</html>

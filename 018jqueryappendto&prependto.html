@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<style>
+#box{
+    border: 2px solid black;
+    padding: 5px;
+    background: lightgreen;
+}
+</style>
+
+<body>
+    <h1>jQuery appendTo & prependTo Methods</h1>
+    
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae a corporis unde alias laborum sed animi. Dolore ex, accusantium at eos fugit rem perferendis deleniti ea laborum, tempore minus obcaecati.</p>
+    </div>
+    <br>
+    <button id="appendtobtn">appendTo</button>
+    <button id="prependtobtn">prependTo</button>
+
+<script>
+// 1. appendto() method:-
+// The appendTo() method inserts HTML elements at the end of the selected elements.
+// Tip: To insert HTML elements at the beginning of the selected elements, use the prependTo() method.
+
+// Syntax
+// $(content).appendTo(selector)
+
+// Parameter	Description
+// content	Required. Specifies the content to insert (must contain HTML tags).
+
+// Note: If content is an existing element, it will be moved from its current position, and inserted at the end of the selected elements.
+// selector	Required. Specifies on which elements to append the content to
+
+// 2. prependto() method:-
+// The prependTo() method inserts HTML elements at the beginning of the selected elements.
+// Tip: To insert HTML elements at the end of the selected elements, use the appendTo() method.
+
+// Syntax
+// $(content).prependTo(selector)
+
+// Parameter	Description
+// content	Required. Specifies the content to insert (must contain HTML tags).
+
+// Note: If content is an existing element, it will be moved from its current position, and inserted at the beginning of the selected elements.
+// selector	Required. Specifies on which elements to prepend the content to
+
+
+$(document).ready(function(){
+
+// 1. after method:-
+$("#appendtobtn").click(function(){
+    $("<h1>Gaurav Mishra</h1>").appendTo("#box")
+})
+
+// 2. before method:-
+$("#prependtobtn").click(function(){
+    $("<h1>Gaurav Mishra</h1>").prependTo("#box")
+}) 
+         
+})
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #box{
+            background: lightgreen;
+            padding: 10px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jquery event.target property</h1>
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum accusamus velit qui quo illo repellat iste quaerat tempora, dolore voluptatibus voluptatum eius doloremque similique architecto eveniet nobis. Ducimus, inventore excepturi!</p>
+        <button>Test Button</button>
+    </div>
+    <br>
+    <h3></h3>
+
+    <script>
+// 1. event.target property:- 
+// The event.target property returns which DOM element triggered the event.
+
+// It is often useful to compare event.target to this in order to determine if the event is being handled due to event bubbling.
+
+// Syntax
+// event.target
+
+// Parameter	Description
+// event	Required. The event parameter comes from the event binding function
+
+// 2. nodeName property:-
+// The nodeName property returns the name of a node:
+// The tagname (in upper case) for element nodes
+// The attribute name for attribute nodes
+// #text for text nodes
+// #comment for comment nodes
+// #document for document nodes
+// The nodeName property is read-only.
+
+$(document).ready(function(){
+    $("#box").on("click",function(event){
+
+        // here we are use javascript property because event.target is javascript property not jquery property
+        // 
+        // $("h3").html(`Target Element : ${event.target.nodeName}`)
+        $("h3").html(`Target Element : ${event.target.innerHTML}`)
+    })
+})
+
+    </script>
+</body>
+</html>

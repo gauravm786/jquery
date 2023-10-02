@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<style>
+#box{
+    border: 2px solid black;
+    padding: 5px;
+}
+.first{
+    background-color: tan;
+}
+.second{
+    background-color: pink;
+}
+</style>
+
+<body>
+    <h1>jQuery CSS Methods</h1>
+    <br> <br>
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae a corporis unde alias laborum sed animi. Dolore ex, accusantium at eos fugit rem perferendis deleniti ea laborum, tempore minus obcaecati.</p>
+    </div>
+    <br>
+    <button id="stylebutton">Add Style</button>
+
+    <script>
+    // .css() method
+    // The css() method sets or returns one or more style properties for the selected elements.
+    // CSS() method  applies CSS inline in the given element.
+
+    // When used to return properties:
+    // This method returns the specified CSS property value of the FIRST matched element. However, shorthand CSS properties (like "background" and "border") are not fully supported and may give different results in different browsers.
+
+    // When used to set properties:
+    // This method sets the specified CSS property for ALL matched elements.
+
+    // Syntax
+    // Return the CSS property value:
+
+    // $(selector).css(property)
+    // Set the CSS property and value:
+
+    // $(selector).css(property,value)
+    // Set CSS property and value using a function:
+
+    // $(selector).css(property,function(index,currentvalue))
+    // Set multiple properties and values:
+
+    // $(selector).css({property:value, property:value, ...})
+
+    // Parameter	Description
+    // property	Specifies the CSS property name, like "color", "font-weight", etc.
+    // value	Specifies the value of the CSS property, like "red", "bold", etc.
+    // function(index,currentvalue)	Specifies a function that returns the new value for the CSS property
+    // index - Returns the index position of the element in the set
+    // currentvalue - Returns the current value of the CSS property
+    
+
+    $(document).ready(function(){
+        $("#stylebutton").click(function(){
+            $("#box").css("background","pink")
+
+            // adding multiple CSS properties
+            $("#box").css({"background":"black","color":"white","border":"5px dotted blue"})
+        })
+    })
+
+
+    </script>
+</body>
+
+</html>

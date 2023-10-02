@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<style>
+#box{
+    border: 2px solid black;
+    padding: 5px;
+    background: lightgreen;
+}
+</style>
+
+<body>
+    <h1>jQuery Empty & Remove Methods</h1>
+    
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae a corporis unde alias laborum sed animi. Dolore ex, accusantium at eos fugit rem perferendis deleniti ea laborum, tempore minus obcaecati.</p>
+    </div>
+    <br>
+    <button id="emptybtn">Empty</button>
+    <button id="removebtn">Remove</button>
+
+<script>
+
+// 1. remove() method:-
+// The remove() method removes the selected elements, including all text and child nodes.
+// This method also removes data and events of the selected elements.
+// Tip: To remove the elements without removing data and events, use the detach() method instead.
+// Tip: To remove only the content from the selected elements, use the empty() method.
+
+// Syntax
+// $(selector).remove(selector)
+
+// Parameter	Description
+// selector	Optional. Specifies one or more elements to be removed.
+// To remove multiple elements, separate them with a comma (,)
+
+
+// 2. empty() method:-
+// The empty() method removes all child nodes and content from the selected elements.
+// Note: This method does not remove the element itself, or its attributes.
+// Tip: To remove the elements without removing data and events, use the detach() method.
+// Tip: To remove the elements and its data and events, use the remove() method.
+
+// Syntax
+// $(selector).empty()
+
+$(document).ready(function(){
+
+// 1. empty method:-
+$("#emptybtn").click(function(){
+    $("#box").empty()
+})
+
+// 2. remove method:-
+$("#removebtn").click(function(){
+    $("#box").remove()
+}) 
+         
+})
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 5px;
+            border: 2px solid black;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery FadeIn,FadeOut,FadeToggle,FadeTo method</h1>
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugit perspiciatis, omnis eius pariatur ratione maiores commodi sed, nemo repellendus temporibus, nostrum vero dolores corrupti repellat quibusdam tenetur error? Ea?</p>
+    </div>
+    <br>
+    <button id="fadeinbtn">Fade In</button>
+    <button id="fadeoutbtn">Fade Out</button>
+    <button id="fadetogglebtn">Fade Toggle</button>
+    <button id="fadetobtn">Fade To</button>
+
+
+    <script> 
+// 1. fadeIn() method:-    
+// The fadeIn() method gradually changes the opacity, for selected elements, from hidden to visible (fading effect).
+// Note: Hidden elements will not be displayed at all (no longer affects the layout of the page).
+// Tip: This method is often used together with the fadeOut() method.
+
+// Syntax
+// $(selector).fadeIn(speed,easing,callback)
+
+// Parameter	Description
+// speed	Optional. Specifies the speed of the fading effect. Default value is 400 milliseconds
+// Possible values:
+// milliseconds
+// "slow"
+// "fast"
+
+// easing	Optional. Specifies the speed of the element in different points of the animation. Default value is "swing"
+// Possible values:
+// "swing" - moves slower at the beginning/end, but faster in the middle
+// "linear" - moves in a constant speed
+// Tip: More easing functions are available in external plugins
+
+// callback	Optional. A function to be executed after the fadeIn() method is completed
+
+
+// 2. fadeOut() method:-
+// The fadeOut() method gradually changes the opacity, for selected elements, from visible to hidden (fading effect).
+// Note: Hidden elements will not be displayed at all (no longer affects the layout of the page).
+// Tip: This method is often used together with the fadeIn() method.
+
+// Syntax
+// $(selector).fadeOut(speed,easing,callback)
+
+// Parameter	Description
+// speed	Optional. Specifies the speed of the fading effect. Default value is 400 milliseconds
+// Possible values:
+// milliseconds
+// "slow"
+// "fast"
+
+// easing	Optional. Specifies the speed of the element in different points of the animation. Default value is "swing"
+// Possible values:
+// "swing" - moves slower at the beginning/end, but faster in the middle
+// "linear" - moves in a constant speed
+// Tip: More easing functions are available in external plugins
+
+// callback	Optional. A function to be executed after the fadeOut() method is completed
+
+
+// 3. fadeToggle() method:- 
+// The fadeToggle() method toggles between the fadeIn() and fadeOut() methods.
+// If the elements are faded out, fadeToggle() will fade them in.
+// If the elements are faded in, fadeToggle() will fade them out.
+// Note: Hidden elements will not be displayed at all (no longer affects the layout of the page).
+
+// Syntax
+// $(selector).fadeToggle(speed,easing,callback)
+
+// Parameter	Description
+// speed	Optional. Specifies the speed of the fading effect. Default value is 400 milliseconds
+// Possible values:
+// milliseconds
+// "slow"
+// "fast"
+
+// easing	Optional. Specifies the speed of the element in different points of the effect. Default value is "swing"
+// Possible values:
+// "swing" - moves slower at the beginning/end, but faster in the middle
+// "linear" - moves in a constant speed
+// Tip: More easing functions are available in external plugins
+
+// callback	Optional. A function to be executed after the fadeToggle() method is completed
+
+
+// 4. fadeTo() method:-
+// $(selector).fadeTo(speed,opacity,easing,callback)
+
+// Parameter	Description
+// speed	Required. Specifies the speed of the fading effect.
+// Possible values:
+// milliseconds
+// "slow"
+// "fast"
+
+// opacity	Required. Specifies the opacity to fade to. Must be a number between 0.00 and 1.00
+
+// easing	Optional. Specifies the speed of the element in different points of the animation. Default value is "swing"
+// Possible values:
+// "swing" - moves slower at the beginning/end, but faster in the middle
+// "linear" - moves in a constant speed
+// Tip: More easing functions are available in external plugins
+
+// callback	Optional. A function to be executed after the fadeTo() method is completed
+
+
+
+$(document).ready(function(){
+    
+    // 1. fadeIn() method:-   
+  $("#fadeinbtn").click(function(){
+    // $("#box").fadeIn()
+    // $("#box").fadeIn("slow")
+    // $("#box").fadeIn("fast")
+    // $("#box").fadeIn(4000)
+    // $("#box").fadeIn("swing")
+    // $("#box").fadeIn(linear,function(){
+    //     alert("hide button clicked")
+    // })
+    $("#box").fadeIn("swing",function(){
+        alert("fadeIn button clicked")
+    })
+
+  })  
+  
+// 2. fadeOut() method:-   
+  $("#fadeoutbtn").click(function(){
+    // $("#box").fadeOut()
+    // $("#box").fadeOut("slow")
+    // $("#box").fadeOut("fast")
+    // $("#box").fadeOut(4000)
+    $("#box").fadeOut(4000,function(){
+        alert("fadeOut button clicked")
+    })
+   })  
+    
+// 3. fadeToggle() method:-   
+    $("#fadetogglebtn").click(function(){
+    // $("#box").fadeToggle()
+    // $("#box").fadeToggle("slow")
+    // $("#box").fadeToggle("fast")
+    // $("#box").fadeToggle(4000)
+    $("#box").fadeToggle(4000,function(){
+        alert("fadeToggle button clicked")
+    })
+    })
+
+// 4. fadeTo() method:-   
+$("#fadetobtn").click(function(){
+    // $("#box").fadeTo()
+    // $("#box").fadeTo("slow")
+    // $("#box").fadeTo("fast")
+    // $("#box").fadeTo(4000)
+    $("#box").fadeTo(4000,0.5,function(){
+        alert("fadeTo button clicked")
+    })
+    })     
+    
+})
+    </script>
+</body>
+</html>

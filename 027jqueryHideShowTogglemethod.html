@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 5px;
+            border: 2px solid black;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Hide,Show,Toggle method</h1>
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugit perspiciatis, omnis eius pariatur ratione maiores commodi sed, nemo repellendus temporibus, nostrum vero dolores corrupti repellat quibusdam tenetur error? Ea?</p>
+    </div>
+    <br>
+    <button id="hidebtn">Hide</button>
+    <button id="showbtn">Show</button>
+    <button id="togglebtn">Toggle</button>
+
+
+    <script> 
+// 1. hide method:-
+// The hide() method hides the selected elements.
+// Tip: This is similar to the CSS property display:none.
+// Note: Hidden elements will not be displayed at all (no longer affects the layout of the page).
+// Tip: To show hidden elements, look at the show() method.
+
+// Syntax
+// $(selector).hide(speed,easing,callback)
+
+// Parameter	Description
+// speed	Optional. Specifies the speed of the hide effect. Default value is 400 milliseconds
+// Possible values:
+// milliseconds
+// "slow"
+// "fast"
+
+// easing	Optional. Specifies the speed of the element in different points of the animation. Default value is "swing"
+// Possible values:
+// "swing" - moves slower at the beginning/end, but faster in the middle
+// "linear" - moves in a constant speed
+
+// Tip: More easing functions are available in external plugins
+// callback	Optional. A function to be executed after the hide() method is completed
+// To learn more about callback, visit our jQuery Callback chapter         
+
+
+// 2. show method:-
+// The show() method shows the hidden, selected elements.
+// Note: show() works on elements hidden with jQuery methods and display:none in CSS (but not visibility:hidden).
+// Tip: To hide elements, look at the hide() method.
+
+// Syntax
+// $(selector).show(speed,easing,callback)
+
+// Parameter	Description
+// speed	Optional. Specifies the speed of the show effect. Default value is 400 milliseconds
+// Possible values:
+// milliseconds
+// "slow"
+// "fast"
+
+// easing	Optional. Specifies the speed of the element in different points of the animation. Default value is "swing"
+// Possible values:
+// "swing" - moves slower at the beginning/end, but faster in the middle
+// "linear" - moves in a constant speed
+
+// Tip: More easing functions are available in external plugins
+// callback	Optional. A function to be executed after the show() method is completed
+// To learn more about callback, visit our jQuery Callback chapter
+
+
+// 3. toggle method:-
+// The toggle() method toggles between hide() and show() for the selected elements.
+// This method checks the selected elements for visibility. show() is run if an element is hidden. hide() is run if an element is visible - This creates a toggle effect.
+// Note: Hidden elements will not be displayed at all (no longer affects the layout of the page).
+// Tip: This method can also be used to toggle between custom functions.
+
+// Syntax
+// $(selector).toggle(speed,easing,callback)
+
+// Parameter	Description
+// speed	Optional. Specifies the speed of the hide/show effect
+// Possible values:
+// milliseconds
+// "slow"
+// "fast"
+
+// easing	Optional. Specifies the speed of the element in different points of the animation. Default value is "swing"
+// Possible values:
+// "swing" - moves slower at the beginning/end, but faster in the middle
+// "linear" - moves in a constant speed
+
+// Tip: More easing functions are available in external plugins
+// callback	Optional. A function to be executed after the toggle() method is completed
+// To learn more about callback, visit our jQuery Callback chapter
+
+
+
+$(document).ready(function(){
+
+// 1. hide() method:-   
+  $("#hidebtn").click(function(){
+    // $("#box").hide()
+    // $("#box").hide("slow")
+    // $("#box").hide("fast")
+    // $("#box").hide(4000)
+    // $("#box").hide("swing")
+    // $("#box").hide(linear,function(){
+    //     alert("hide button clicked")
+    // })
+    $("#box").hide("swing",function(){
+        alert("hide button clicked")
+    })
+
+  })  
+  
+// 2. show() method:-   
+  $("#showbtn").click(function(){
+    // $("#box").show()
+    // $("#box").show("slow")
+    // $("#box").show("fast")
+    // $("#box").show(4000)
+    $("#box").show(4000,function(){
+        alert("show button clicked")
+    })
+   })  
+    
+// 3. toggle() method:-   
+    $("#togglebtn").click(function(){
+    // $("#box").toggle()
+    // $("#box").toggle("slow")
+    // $("#box").toggle("fast")
+    // $("#box").toggle(4000)
+    $("#box").toggle(4000,function(){
+        alert("toggle button clicked")
+    })
+    })  
+    
+})
+    </script>
+</body>
+</html>
