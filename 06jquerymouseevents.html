@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style>
+        #box{
+            background-color: pink;
+            color: black;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Mouse Events</h1>
+    <div id="box" class="test">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, porro aliquam vitae eos officia dolorum in. Provident expedita sed est rem aspernatur libero nobis aut ipsam, dignissimos illo quos fuga!</p>
+    </div>
+    <script>
+// 1.  .click() method:- 
+// The click() method simulates a mouse-click on an element.
+// This method can be used to execute a click on an element as if the user manually   clicked on it.
+
+// 2.  .dblclick() method:- 
+// The dblclick event occurs when an element is double-clicked.
+// The dblclick() method triggers the dblclick event, or attaches a function to run when a dblclick event occurs.
+// Tip: The dblclick event also generates a click event. This can cause problems if both events are applied to the same element.
+
+// 3. .contextmenu() method:-
+// The contextmenu event is sent to an element when the right button of the mouse is clicked on it, but before the context menu is displayed. In case the context menu key is pressed, the event is triggered on the html element or the currently focused element. Any HTML element can receive this event.
+
+//4. .mouseenter() method:-
+// The mouseenter event occurs when the mouse pointer is over (enters) the selected element.
+// The mouseenter() method triggers the mouseenter event, or attaches a function to run when a mouseenter event occurs.
+
+//5. .mouseleave() method-
+// The mouseleave event occurs when the mouse pointer leaves the selected element.
+// The mouseleave() method triggers the mouseleave event, or attaches a function to run when a mouseleave event occurs.
+
+$(document).ready(function(){
+    $("#box").click(function(){
+        $("#box").css("background-color","green")
+        // var a=$("#box").html()
+        // console.log(a)
+    })
+
+    $("#box").dblclick(function(){
+        $("#box").css("background-color","orange")
+    })
+
+    $("#box").contextmenu(function(){
+        $("#box").css("background-color","blue")
+    })
+
+    $("#box").mouseenter(function(){
+        $("#box").css("background-color","tan")
+    })
+
+    $("#box").mouseleave(function(){
+        $("#box").css("background-color","purple")
+    })
+
+})
+    </script>
+</body>
+</html>

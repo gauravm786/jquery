@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style>
+        #test1 {
+            background-color: red;
+            color: black;
+            padding: 16px;
+            display: inline-block;
+            width: 40%;
+        }
+        
+        #test2 {
+            background-color: orange;
+            color: black;
+            padding: 16px;
+            display: inline-block;
+            width: 40%;
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Jquery syntax</h1>
+    <div class="container">
+        <div id="test1">
+            <h2>Test Box 1</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus quia impedit atque dolores veniam ab
+                consequatur quod facere labore, corporis placeat, et amet natus. A consequuntur enim fugit necessitatibus
+                itaque?</p>
+        </div>
+        <div id="test2">
+            <h2>Test Box 2</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia minima soluta rerum quasi fugiat error et
+                quas labore, quis iure quia iusto sit deleniti ipsam dolores, vel nesciunt numquam enim.</p>
+        </div>
+    </div>
+    <script>
+        //The html() method sets or returns the content (innerHTML) of the selected elements.
+        //When this method is used to return content, it returns the content of the FIRST matched element.
+        //When this method is used to set content, it overwrites the content of ALL matched elements.
+        // Tip: To set or return only the text content of the selected elements, use the text() method.
+        $(document).ready(function(){
+            console.log("hello jquery")
+            var a = $("#test1").html()
+            console.log(a)
+            var b = $("#test2").html()
+            console.log(b)
+        })
+    </script>
+</body>
+
+</html>

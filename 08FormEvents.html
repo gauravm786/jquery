@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style>
+        #box{
+            background-color: pink;
+            color: black;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        #test{
+            border: 2px solid red;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Events</h1>
+    <form action="" id="sform">
+        <label for="sname">Name</label>
+        <input type="text" id="sname"> <br> <br>
+
+        <label for="sclass">Class</label>
+        <input type="text" id="sclass"> <br> <br>
+
+        <label for="scountry">Country</label>
+        <select name="" id="scountry">
+            <option value="">India</option>
+            <option value="">Pakistan</option>
+            <option value="">Bangladesh</option>
+            <option value="">Srilanka</option>
+            <option value="">Nepal</option>
+        </select> <br><br>
+
+        <input type="submit" value="Submit"> <br><br>
+
+        <div id="test"></div>
+    </form>
+
+<script>
+// 1. .focus() method:-
+// The focus event occurs when an element gets focus (when selected by a mouse click or by "tab-navigating" to it).
+// The focus() method triggers the focus event, or attaches a function to run when a focus event occurs.
+
+// 2. .blur() method:-
+// The blur event occurs when an element loses focus.
+// The blur() method triggers the blur event, or attaches a function to run when a blur event occurs.
+
+// 3. .change() method:-
+// The change event occurs when the value of an element has been changed (only works on <input>, <textarea> and <select> elements).
+// The change() method triggers the change event, or attaches a function to run when a change event occurs.
+// Note: For select menus, the change event occurs when an option is selected. For text fields or text areas, the change event occurs when the field loses focus, after the content has been changed.
+
+// 4. .val() method:-
+// The val() method returns or sets the value attribute of the selected elements.
+// When used to return value:
+// This method returns the value of the value attribute of the FIRST matched element.
+// When used to set value:
+// This method sets the value of the value attribute for ALL matched elements.
+// Note: The val() method is mostly used with HTML form elements.
+
+// 5. .text() method:-
+// The text() method sets or returns the text content of the selected elements.
+// When this method is used to return content, it returns the text content of all matched elements (HTML markup will be removed).
+// When this method is used to set content, it overwrites the content of ALL matched elements.
+
+// 6. .select() method:-
+// The select event occurs when a text is selected (marked) in a text area or a text field.
+// The select() method triggers the select event, or attaches a function to run when a select event occurs.
+
+// 7. .submit() method:-
+// The submit event occurs when a form is submitted.
+// This event can only be used on <form> elements.
+// The submit() method triggers the submit event, or attaches a function to run when a submit event occurs.
+
+
+//to target multiple id at same time.
+// $("#sname,#sclass,#scountry")
+
+// focus 
+$("#sname,#sclass,#scountry").focus(function(){
+    $(this).css("background-color","red")
+})
+
+// blur 
+$("#sname,#sclass,#scountry").blur(function(){
+    // $(this).css("background-color","blue")
+    $(this).css("background-color","")
+})
+
+// change 
+$("#scountry").change(function(){
+    // $(this).css("background-color","orange")
+
+    // var a=$(this).val() //doesn't work
+    // The reason val() doesn't do the trick is because clicking an option doesn't change the value of the dropdown.It just adds the :selected property to the selected option which is a child of the dropdown.
+    var a=$(this).find(":selected").text()
+    console.log(a)
+    $("#test").html(a)
+})
+
+//select
+$("#sname,#sclass").select(function(){
+    $(this).css("background-color","yellow")
+})
+
+// submit 
+$("#sform").submit(function(){
+    alert("Form Submitted")
+})
+
+</script>
+</body>
+</html>

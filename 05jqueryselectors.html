@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        #box{
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jquery selectors</h1>
+    <div id="box" class="test">
+        <h1>Test Box 2</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, reprehenderit! Id consequuntur voluptatem voluptas numquam, pariatur ipsum et, eaque nam consectetur ea quo distinctio iure incidunt, molestias ducimus officiis voluptatum.</p>
+    </div>
+    <ul id="list">
+        <li>Orange</li>
+        <li class="test">Banana</li>
+        <li>Apple</li>
+        <li class="test">Grapes</li>
+        <li>Guava</li> 
+    </ul>
+    <script>
+        $(document).ready(function(){
+            // jQuery css() Method
+            // The css() method sets or returns one or more style properties for the selected elements.
+
+            // 1.select by id
+            // $("#list").css("color","red")
+            // $("#list").css("border","2px solid red")
+
+            //2.To select <li> tag under <ul> tag.
+                // $("#list li").css("border","2px solid red")
+
+            //3.Select all class by name of test
+            // $(".test").css("border","2px solid red")
+
+            //4. adding css for all elements using universal selector 
+            // $("*").css("border","2px solid red")
+
+            //5.select first <li> tag in the page
+                // $("li:first").css("border","2px solid red")
+                // $("li:first-child").css("border","2px solid red")
+
+            //5.select first <p> tag in the page
+                // $("li:last").css("border","2px solid red")
+                // $("li:last-child").css("border","2px solid red")
+
+            //6.eq means equation which will select particular element starting from 0,1,2.To target second <li> tag
+            // $("li:eq(1)").css("border","2px solid red")
+            // $("li:eq(2)").css("border","2px solid red")
+
+             //7.To target odd <li> tag
+             // $("li:odd").css("border","2px solid red")
+
+            //8.To target even <li> tag
+            // $("li:even").css("border","2px solid red")
+
+            //9.gt means greater than which will target all element greater than a value specified.
+            // $("li:gt(1)").css("border","2px solid red")
+
+            //10.lt means lower than which will target all element lower than a value specified.
+            $("li:lt(3)").css("border","2px solid red")
+
+        })
+    </script>
+</body>
+</html>
